@@ -17,7 +17,7 @@
 \newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
 %=============================
 \usepackage{datatool}
-\DTLloaddb{names}{../data/namelist/namelist-1.csv}
+\DTLloaddb{names}{../data/namelist/certificate_namelist.csv}
 %=============================
 \def\signature#1#2{\parbox[b]{1in}{\smash{#1}\vskip12pt}
 \hfill \parbox[t]{2.8in}{\shortstack{\vrule width 2.8in height 0.4pt\\\small#2}}}
@@ -47,9 +47,9 @@
 {\onehalfspacing
     % {\LARGE\bfseries \color{title}{Certificate of Collaboration}}\\
 	\vskip1em
-	    {\LARGE\bfseries 2016 OHBM Hackathon}\\%\initfamily
-	    {Lausanne, Switzerland\\}
-	{June 23 - 25\\}
+	    {\LARGE\bfseries 2022 OHBM Hackathon}\\%\initfamily
+	    {Glasgow, United Kingdom\\}
+	{June 18 - 16\\}
 }\par}
 \hfill
 \end{minipage}
@@ -74,27 +74,29 @@
 
 \vskip2em
 { 
-\noindent\centering{This is to certify that} {\bfseries{\dg. \MakeUppercase{\name}}}, { \dgn}
-of {\sub}, {\inst}, \centering{participated in the \emph{\bfseries 2016 Organization of Human Brain Mapping Hackathon} organized by the \textbf{Organization of Human Brain Mapping Open Science Special Interest Group} in coordination with \textbf{brainhack.org}.}\\
+\noindent\centering{This is to certify that} 
+{\bfseries{\dg. \MakeUppercase{\name}}}, { \dgn} of {\sub}, {\inst}, 
+\centering{participated in the 
+\emph{\bfseries 2022 Organization of Human Brain Mapping Hackathon} 
+organized by the 
+\textbf{Organization of Human Brain Mapping Open Science Special Interest Group} 
+in coordination with \textbf{brainhack.org}.}\\
 }
 
 \noindent
 %\beginskip
-{%\singlespacing
+{%
 \vfill
- %\begin{minipage}[l]{1in}
- %  \sigskip \signature{}{Dr. Pierre Bellec \\ Organizer }
- % \end{minipage}
- %\hfill
- % \begin{minipage}[c]{2.8in}
- % \sigskip \signature{}{Dr. B. Nolan Nichols \\ Open Science SIG Secretary}
- %\end{minipage}
-%\hfill
-\begin{minipage}[l]{5in}
-%\sigskip 
-%\includegraphics[width=.5\linewidth]{../data/signature/signature.pdf}
-\signature{}{R. Cameron Craddock, Ph.D. \\ Chair of the OHBM Open Science SIG }
-\end{minipage}}
+ \begin{minipage}[l]{6in}
+	\includegraphics[width=.5\linewidth]{../data/signature/signature.pdf}
+  	\signature{}{Hao-Ting Wang\\ \\Open Science SIG\\Hackathon Co-Chair}
+ \end{minipage}
+ \hfill
+ \begin{minipage}[r]{6in}
+	\includegraphics[width=.5\linewidth]{../data/signature/signature.pdf}
+	\signature{}{Stefano Moia\\  \\Open Science SIG\\Hackathon Co-Chair}
+ \end{minipage}
+}
 %=============================
 \pagebreak
 }
