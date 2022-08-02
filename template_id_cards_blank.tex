@@ -1,6 +1,7 @@
 \documentclass[12pt]{letter}
 \usepackage{graphicx}
 \usepackage[nocapaddress]{envlab}
+\usepackage{xcolor}
 \usepackage{multido}
 \SetLabel 
   {88.9mm}  % width
@@ -28,7 +29,7 @@
 %\renewcommand{\PrintLabel}[1]{\parbox[t][\LabelHeight][t]{\LabelWidth}{\PrintAddress{#1}}}
 
 \usepackage{datatool}
-\DTLloaddb{names}{../data/namelist/id_namelist.csv}
+\DTLloaddb{names}{./data/namelist/id_namelist.csv}
 
 
 \begin{document}%
@@ -38,13 +39,13 @@
 \name=Name}{
 \mlabel{}{%
 \begin{center}
-    \includegraphics[width=.65\linewidth]{../data/logos/ohbm2022.png}\\
+    \includegraphics[width=.65\linewidth]{./data/logos/ohbm2022.png}\\
     \vskip4ex
-    {\Huge\bfseries \name} \\
+    \color{white}{\Large\bfseries \name} \\
     \vskip2ex
     \vspace*{\fill}
     % {OHBM Brainhack 2022} \\
-    {\small June 16 - 18, Glasgow, UK}\\
+    \color{black}{\small June 16 - 18, Glasgow, UK}\\
 \end{center}
 }}
 \end{document}

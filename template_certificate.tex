@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{wallpaper}
 \usepackage[normalem]{ulem}
+\usepackage[many]{tcolorbox}
 \usepackage{charter}
 \usepackage{microtype}
 \hyphenpenalty 100000
@@ -17,18 +18,26 @@
 \newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
 %=============================
 \usepackage{datatool}
-\DTLloaddb{names}{../data/namelist/certificate_namelist.csv}
+\DTLloaddb{names}{./data/namelist/certificate_namelist.csv}
 %=============================
 \def\signature#1#2{\parbox[b]{1in}{\smash{#1}\vskip12pt}
 \hfill \parbox[t]{2.8in}{\shortstack{\vrule width 2.8in height 0.4pt\\\small#2}}}
+
 \def\sigskip{\vskip0.4in plus 0.1in}
         \def\beginskip{\vskip0.5875in plus 0.1in}
+
+\newtcolorbox{cross}{blank,breakable,parbox=false,
+  overlay={\draw[black,line width=0.5pt] (interior.west)--(interior.east);
+    }}
+
 %=============================
 \definecolor{title}{RGB}{0,0,0}
 \definecolor{other}{RGB}{171,0,255}
 \definecolor{name}{RGB}{255,0,0}
 \definecolor{phd}{RGB}{0,0,240}
 %=============================
+
+
 \begin{document}
 \begin{landscape}
 \linespread{1.25}\selectfont
@@ -40,7 +49,7 @@
 %=============================
 \noindent
 \begin{minipage}[l]{1.5in}
- \includegraphics[width=\linewidth]{../data/logos/OHBM_B.jpg}
+ \includegraphics[width=\linewidth]{./data/logos/OHBM_B.jpg}
 \end{minipage}
 \begin{minipage}[c]{6in}
 {\centering
@@ -49,35 +58,27 @@
 	\vskip1em
 	    {\LARGE\bfseries 2022 OHBM Hackathon}\\%\initfamily
 	    {Glasgow, United Kingdom\\}
-	{June 18 - 16\\}
+	{June 16 - 18\\}
 }\par}
 \hfill
 \end{minipage}
 \begin{minipage}[r]{1.5in}
- \includegraphics[width=\linewidth]{../data/logos/brainhack_logo.png}
+ \includegraphics[width=\linewidth]{./data/logos/brainhack_logo.png}
 \end{minipage}
-% \begin{center}
-% 	\includegraphics[width=.75\linewidth]{../data/logos/ohbm.png}
-% \end{center}
-% \hfill
 \vskip2em
 
 {\centering
 {\onehalfspacing
-    {\Large\bfseries \color{title}{Certificate of Collaboration}}\\
-	% \vskip1em
-	%     {\LARGE\bfseries 2016 OHBM Hackathon}\\%\initfamily
-	%     {Lausanne, Switzerland\\}
-	% {June 23 - 25\\}
+    {\Large\bfseries \color{title}{Certificate of Participation}}\\
 }\par}
 \hfill
 
 \vskip2em
 { 
 \noindent\centering{This is to certify that} 
-{\bfseries{\dg. \MakeUppercase{\name}}}, { \dgn} of {\sub}, {\inst}, 
+{\bfseries{\dg. \MakeUppercase{\name}}}, { \dgn} of {\sub}, {\inst}, {\place},
 \centering{participated in the 
-\emph{\bfseries \{Year\} Organization of Human Brain Mapping Hackathon} 
+\emph{\bfseries 2022 Organization of Human Brain Mapping Hackathon} 
 organized by the 
 \textbf{Organization of Human Brain Mapping Open Science Special Interest Group} 
 in coordination with \textbf{brainhack.org}.}\\
@@ -85,23 +86,37 @@ in coordination with \textbf{brainhack.org}.}\\
 
 \noindent
 %\beginskip
-{%\singlespacing
+{%
 \vfill
- \begin{minipage}[l]{2.8in}
-	\sigskip 
-	\includegraphics[width=.85\linewidth]{../data/signature/signature.pdf}
-  	\signature{}{\{Name\}\\ Open Science SIG Hackathon Chair }
+\singlespacing
+ \begin{minipage}[l]{2in}
+ 	\begin{cross}
+	\includegraphics[width=.7\linewidth]{./data/signature/signature.png}
+	\end{cross}
+	\begin{footnotesize}
+	\center
+  	Hao-Ting Wang\\
+  	Open Science SIG\\
+  	Hackathon Co-Chair\\
+  	\end{footnotesize}
  \end{minipage}
  \hfill
- \begin{minipage}[c]{2.8in}
-	\sigskip 
-	\includegraphics[width=.85\linewidth]{../data/signature/signature.pdf}
- 	\signature{}{\{Name\}\\ Open Science SIG Hackathon Chair }
+ \begin{minipage}[r]{2in}
+ 	\begin{cross}
+	\includegraphics[width=.7\linewidth]{./data/signature/signature.png}
+	\end{cross}
+	\center
+	\begin{footnotesize}
+	Stefano Moia\\
+	Open Science SIG\\
+	Hackathon Co-Chair\\
+ 	\end{footnotesize}
  \end{minipage}
-\vfill
 }
 %=============================
 \pagebreak
+
 }
+
 \end{landscape}
 \end{document} 
